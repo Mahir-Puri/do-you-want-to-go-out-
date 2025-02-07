@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./yes_style.css">
+    </head> 
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Yayy! Sending you the biggest HUG!!</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media.tenor.com/YTw87WdiaasAAAAi/tkthao219-capoo.gif">
+            </div>
+        </div>
+
+        <!-- Audio Element (hidden) -->
+        <audio id="backgroundMusic" loop autoplay>
+            <source src="your-music-file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+            // Start the flower animation on the "Yes" page
+            function startFlowerAnimation() {
+                const container = document.querySelector(".container");
+
+                // Create multiple flowers
+                for (let i = 0; i < 50; i++) {
+                    createFlower(container);
+                }
+            }
+
+            // Function to create a flower element
+            function createFlower(container) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸"; // Use a flower emoji
+                flower.style.left = `${Math.random() * 100}%`;
+                flower.style.top = `${-10 - Math.random() * 20}%`; // Start above the screen
+                flower.style.animationDuration = `${5 + Math.random() * 5}s`; // Random fall speed
+                container.appendChild(flower);
+
+                // Remove the flower after the animation ends
+                setTimeout(() => flower.remove(), 10000); // Adjust based on animation duration
+            }
+
+            // Start the animation when the page loads
+            startFlowerAnimation();
+        </script>
+    </body> 
+</html>
